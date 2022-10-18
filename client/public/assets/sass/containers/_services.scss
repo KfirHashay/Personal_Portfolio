@@ -1,0 +1,71 @@
+.services {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+
+  gap: 1.5rem;
+  margin-top: 9rem;
+}
+
+.services__cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.services__card-item {
+  width: 361px;
+  height: 294px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem;
+
+  h2 {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    align-self: center;
+  }
+
+  p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    padding: 1px;
+    text-align: center;
+    width: 220px;
+    min-height: 72px;
+  }
+
+  .icon {
+    position: relative;
+    align-self: center;
+    font-size: 24px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 10px;
+    border-radius: 16px;
+
+    @include light {
+      background: #f7f5ff;
+      color: #7e74f1;
+    }
+    @include dark {
+      color: _palette(secondary-text-color-dark);
+    }
+  }
+}

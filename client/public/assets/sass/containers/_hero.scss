@@ -1,0 +1,229 @@
+#hero {
+  .app__wrapper {
+    padding: 0;
+  }
+  .app__flex {
+    height: 100%;
+  }
+}
+.hero {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex: 1;
+  gap: 120px;
+  margin-top: 21px;
+  padding: 6rem 2rem 0rem;
+  width: 100%;
+
+  @include breakpoint(">=wider") {
+    padding-top: 7rem;
+  }
+
+  @include breakpoint("<=narrow") {
+    flex-direction: column;
+  }
+
+  @include breakpoint("<=mobile") {
+    margin: 0;
+    padding: 6rem 1rem 2rem;
+    gap: 20px;
+  }
+}
+
+.hero__left {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 1px;
+  min-height: 289px;
+  //gap: 12px;
+  padding: 0px;
+
+  margin-left: 20px;
+  max-width: 538px;
+
+  @include breakpoint("<=mobile") {
+    max-width: 320px;
+  }
+
+  .Typewriter {
+    color: transparent;
+    font-family: "Plus Jakarta Sans";
+    font-size: 2.75rem;
+    letter-spacing: 0.125rem;
+    margin: 0.5rem;
+    min-height: 3.4375rem;
+    display: flex;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @include breakpoint("<=mobile") {
+      font-size: 2rem;
+    }
+
+    @include light {
+      color: _palette(text-color);
+    }
+    @include dark {
+      color: _palette(text-color-dark);
+    }
+    .first {
+      @include light {
+        color: _palette(text-color);
+      }
+      @include dark {
+        color: _palette(text-color-dark);
+      }
+    }
+
+    .last {
+      margin-left: 10px;
+      color: rgba(126, 116, 241, 1);
+    }
+  }
+
+  .description {
+    letter-spacing: 0;
+    margin-left: 16px;
+
+    margin-top: 16px;
+    min-height: 96px;
+    max-width: 538px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+
+    @include light {
+      color: _palette(secondary-text-color);
+    }
+    @include dark {
+      color: _palette(secondary-text-color-dark);
+    }
+  }
+
+  .social-icons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    font-size: 22px;
+    margin: 15px;
+    @include light {
+      color: _palette(secondary-text-color);
+    }
+    @include dark {
+      color: _palette(secondary-text-color-dark);
+    }
+  }
+}
+
+.hero__right {
+  display: flex;
+  align-items: flex-end;
+  height: 496px;
+  justify-content: flex-end;
+  padding: 23.3px 30.8px;
+  width: 545px;
+
+  @include breakpoint("<=mobile") {
+    width: 320px;
+  }
+
+  .overlap {
+    height: 449px;
+    position: relative;
+    width: 402px;
+    @include breakpoint("<=mobile") {
+      max-width: 320px;
+    }
+  }
+
+  .overlap-1 {
+    height: 486px;
+    margin-bottom: -86.18px;
+    margin-left: -100px;
+    position: relative;
+    width: 454px;
+    @include breakpoint("<=mobile") {
+      width: 320px;
+
+      margin-bottom: -86.18px;
+      margin-left: -100px;
+    }
+  }
+
+  .back {
+    position: absolute;
+    width: 341px;
+    height: 398px;
+    left: 31px;
+    top: 26px;
+
+    /* Purple */
+
+    background: #7e74f1;
+    border-radius: 16px;
+
+    @include breakpoint("<=mobile") {
+      width: 301px;
+      height: 358px;
+      left: 0px;
+      top: 0px;
+    }
+  }
+
+  .front {
+    position: absolute;
+    align-items: flex-end;
+    background: #eae6fe;
+    border-radius: 16px;
+    display: flex;
+    height: 400px;
+    width: 336px;
+    left: 31px;
+    @include breakpoint("<=mobile") {
+      width: 300px;
+      ///  height: 236px;
+      left: 0px;
+      top: 0px;
+    }
+    top: 24px;
+    overflow: hidden;
+
+    .person {
+      align-items: center;
+      display: flex;
+      height: 367px;
+      left: 55px;
+      min-width: 345px;
+      padding: 0 44.8px;
+      position: absolute;
+      top: 69px;
+      //transform: rotate(21.26deg);
+
+      img {
+        height: 295px;
+        object-fit: cover;
+        //transform: rotate(-21.26);
+        width: 255px;
+      }
+    }
+
+    .lines {
+      height: 210px;
+      left: 237px;
+      position: absolute;
+      top: 0;
+      width: 200px;
+    }
+  }
+}

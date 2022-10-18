@@ -1,0 +1,125 @@
+.app__navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 5%;
+  margin: auto;
+  width: 100%;
+  position: sticky;
+  height: 70px;
+  top: 0;
+  max-width: 90rem;
+
+  z-index: 1000;
+
+  @include light {
+    background-color: _palette(body);
+  }
+  @include dark {
+    background-color: _palette(body-dark);
+  }
+}
+
+button.brgr {
+  display: none;
+  background-color: transparent;
+  @include breakpoint("<=normal") {
+    justify-content: flex-start;
+    display: flex;
+  }
+
+  border: none;
+}
+svg.brgr {
+  display: none;
+  @include light {
+    color: _palette(secondary-text-color);
+  }
+  @include dark {
+    color: _palette(secondary-text-color-dark);
+  }
+  @include breakpoint("<=normal") {
+    justify-content: flex-start;
+    display: flex;
+  }
+}
+
+.app__navbar-logo {
+  cursor: pointer;
+  justify-content: flex-start;
+
+  .wrapper-logo {
+    width: 100px;
+    height: 50px;
+    svg {
+      height: 50px;
+
+      @include light {
+        color: _palette(secondary-text-color);
+      }
+      @include dark {
+        color: _palette(secondary-text-color-dark);
+      }
+    }
+  }
+  @include breakpoint("<=mobile") {
+    display: none;
+  }
+}
+
+.app__navbar-links {
+  list-style: none;
+  text-decoration: none;
+
+  @include breakpoint("<=normal") {
+    display: none;
+  }
+}
+
+.app__navbar-links li {
+  display: inline-block;
+
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+
+  height: 19px;
+}
+.app__navbar-links li a {
+  transition: all 0.3s ease 0s;
+  list-style: none;
+  text-decoration: none;
+}
+.app__navbar-links li a:hover {
+  transition: all 0.3s ease 0s;
+}
+
+.right {
+  @include breakpoint("<=mobile") {
+    gap: 15px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  .sunmoon {
+    position: relative;
+    top: 3px;
+  }
+  .Resume__btn {
+    position: relative;
+    //  top: -1px;
+
+    @include light {
+      background-color: _palette(body);
+      color: _palette(secondary-text-color);
+      border: solid 0.1px _palette(btn-border);
+    }
+    @include dark {
+      background-color: _palette(body-dark);
+      color: _palette(secondary-text-color-dark);
+      border: solid 0.1px _palette(btn-border);
+    }
+  }
+}

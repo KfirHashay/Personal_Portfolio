@@ -1,0 +1,130 @@
+.sidepanel__container {
+  // background-color: rgba(0, 0, 0, 0.1);
+  font-family: "Open Sans", sans-serif;
+
+  width: 320px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+.sidepanel__panel {
+  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+
+  // display: flex;
+  margin-left: auto;
+  margin-right: 0;
+  height: 100vh;
+  width: 320px;
+  transform: translateX(0%);
+  @include light {
+    background-color: rgb(255 255 255);
+  }
+  @include dark {
+    background-color: rgb(72, 75, 82);
+
+    color: rgb(229 231 235);
+  }
+
+  .closesidepanel_Btn {
+    font-size: 1.5rem /* 24px */;
+    line-height: 2rem /* 32px */;
+    padding: 0.75rem /* 12px */;
+    border: none;
+
+    @include light {
+      background-color: rgb(255 255 255);
+    }
+    @include dark {
+      background-color: rgb(72, 75, 82);
+
+      color: _palette(text-color-dark);
+    }
+  }
+}
+.sidepanel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem /* 16px */;
+  margin-left: 1rem /* 16px */;
+  .hold {
+    display: flex;
+    justify-content: flex-start;
+
+    @include breakpoint("<=mobile") {
+      display: none;
+    }
+  }
+}
+
+.set_text {
+  font-weight: 500;
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+}
+
+.sidepanel__links {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding: 30px 0 0 0;
+  align-items: center;
+
+  p {
+    font-weight: 600;
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+  }
+}
+.sidepanel__links li {
+  margin-top: 20px;
+  position: relative;
+  font-size: 17px;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.app__sidepanel-logo {
+  display: none;
+
+  @include breakpoint("<=mobile") {
+    display: flex;
+
+    cursor: pointer;
+    justify-content: flex-start;
+
+    .wrapper-logo {
+      width: 100px;
+      height: 50px;
+      svg {
+        height: 50px;
+
+        @include light {
+          color: _palette(text-color);
+        }
+        @include dark {
+          color: _palette(text-color-dark);
+        }
+      }
+    }
+  }
+}
+
+/* ANIMATIONS */
+.slide-enter {
+  transform: translateX(100%);
+}
+.slide-enter-active {
+  transform: translateX(0%);
+  transition: transform 500ms ease-in-out;
+}
+.slide-exit {
+  transform: translate(-100%, 0%);
+}
+.slide-exit-active {
+  transform: translate(-200%, 0%);
+  transition: transform 500ms ease-in-out;
+}

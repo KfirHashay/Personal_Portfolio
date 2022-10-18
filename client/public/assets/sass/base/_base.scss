@@ -1,0 +1,61 @@
+body {
+  transition: all 0.2s ease-in-out;
+
+  font-family: "Inter";
+  @include light {
+    background-color: _palette(body);
+  }
+  @include dark {
+    background-color: _palette(body-dark);
+  }
+}
+
+.app__container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__wrapper {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  padding: 4rem 2rem;
+
+  @media screen and (max-width: 450px) {
+    padding: 4rem 1rem 2rem;
+  }
+}
+.p-text {
+  text-decoration: none;
+  text-align: left;
+  @include light {
+    color: _palette(secondary-text-color);
+  }
+  @include dark {
+    color: _palette(secondary-text-color-dark);
+  }
+  line-height: 1.5;
+
+  font-size: 16px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}

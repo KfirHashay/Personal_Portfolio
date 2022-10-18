@@ -1,0 +1,21 @@
+// Size.
+$size: (
+  dark-light: (
+    size: 1.7rem,
+  ),
+);
+
+// Palette.
+$palette: (
+  body: rgb(250 251 251),
+  text-color: rgb(0, 0, 0),
+  btn-border: grey,
+
+  primary-color: #7e74f1,
+  secondary-color: #eae6fe,
+
+  secondary-text-color: #3c4348,
+  secondary-text-color-dark: rgba(255, 255, 255, 0.6),
+  text-color-dark: #fff,
+  body-dark: #1e1e1e,
+);
