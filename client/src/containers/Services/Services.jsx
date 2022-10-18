@@ -29,7 +29,7 @@ const abouts = [
 const Services = () => {
   return (
     <div className="services app__flex">
-      <Title Title={"Services"} />
+      <Title Title={"Services"} underTitle={"Specialized in"} />
 
       <div className="services__cards">
         {abouts.map((about, index) => (

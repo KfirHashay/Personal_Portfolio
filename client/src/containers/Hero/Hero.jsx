@@ -17,17 +17,18 @@ const Hero = () => {
           options={{
             autoStart: true,
             loop: true,
-            pauseFor: 2000,
           }}
           onInit={(typewriter) => {
             typewriter
               .typeString(
                 `<span>Kfir</span> <span style="color: rgba(126, 116, 241, 1);"> Hashay</span>`
               )
+              .pauseFor(3000)
               .deleteAll()
               .typeString(
-                `<span>Web</span> <span style="color: rgba(126, 116, 241, 1);"> Developer!</span>`
+                `<span>Web</span> <span style="color: rgba(126, 116, 241, 1);"> Dev!</span>`
               )
+              .pauseFor(2000)
               .deleteAll()
               .start();
           }}
@@ -89,7 +90,11 @@ const Hero = () => {
               ease: "easeOut",
             }}
           ></motion.div>
-          <div className="front">
+          <motion.div
+            className="front"
+            animate={{ opacity: [0, 0, 1] }}
+            transition={{ type: "spring", duration: 0.7, ease: "easeOut" }}
+          >
             <div className="overlap-1">
               <div className="person">
                 <img className="img" src="assets/images/sssss 1.png" alt="" />
@@ -98,7 +103,7 @@ const Hero = () => {
                 <ReactSVG src="assets/images/lines.svg" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

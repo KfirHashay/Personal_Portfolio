@@ -70,7 +70,7 @@ const Work = () => {
   return (
     <>
       <div className="works app__flex">
-        <Title Title={"My Works"} />
+        <Title Title={"My Works"} underTitle={"Featured Projects"} />
 
         <div className="app__work-filter">
           {["UI/UX", "Web App", "Mobile App", "React JS", "All"].map(

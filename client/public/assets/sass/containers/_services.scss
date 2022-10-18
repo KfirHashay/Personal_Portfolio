@@ -2,8 +2,8 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
-
-  gap: 1.5rem;
+  padding: 2rem 2rem 0rem;
+  //gap: 1.5rem;
   margin-top: 9rem;
 }
 
@@ -24,7 +24,15 @@
   align-items: center;
   flex-direction: column;
   margin: 2rem;
-
+  border-radius: 8px;
+  @include light {
+    background: _palette(icon-background);
+    color: #7e74f1;
+  }
+  @include dark {
+    background: _palette(primary-color-dark);
+    color: _palette(secondary-text-color-dark);
+  }
   h2 {
     font-family: "Plus Jakarta Sans";
     font-style: normal;
@@ -32,6 +40,12 @@
     font-size: 16px;
     line-height: 20px;
     align-self: center;
+    @include light {
+      color: _palette(text-color);
+    }
+    @include dark {
+      color: _palette(text-color-dark);
+    }
   }
 
   p {
@@ -56,16 +70,19 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem;
     gap: 10px;
     border-radius: 16px;
 
     @include light {
-      background: #f7f5ff;
+      background: _palette(icon-background);
       color: #7e74f1;
+      border: rgb(237, 237, 237) solid 0.1px;
     }
     @include dark {
+      background: _palette(primary-color-dark);
       color: _palette(secondary-text-color-dark);
+      border: dotted 0.01px _palette(primary-color);
     }
   }
 }

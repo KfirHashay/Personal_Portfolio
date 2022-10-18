@@ -5,16 +5,17 @@
   justify-content: space-between;
   padding: 30px 5%;
   margin: auto;
+  // margin-top: 10px;
   width: 100%;
-  position: sticky;
-  height: 70px;
-  top: 0;
+  position: fixed;
+  height: 80px;
+  //top: 10px;
   max-width: 90rem;
 
   z-index: 1000;
 
   @include light {
-    background-color: _palette(body);
+    background-color: _palette(icon-background);
   }
   @include dark {
     background-color: _palette(body-dark);
@@ -37,7 +38,7 @@ svg.brgr {
     color: _palette(secondary-text-color);
   }
   @include dark {
-    color: _palette(secondary-text-color-dark);
+    color: _palette(text-color-dark);
   }
   @include breakpoint("<=normal") {
     justify-content: flex-start;
@@ -59,7 +60,7 @@ svg.brgr {
         color: _palette(secondary-text-color);
       }
       @include dark {
-        color: _palette(secondary-text-color-dark);
+        color: _palette(text-color-dark);
       }
     }
   }
@@ -90,6 +91,9 @@ svg.brgr {
   transition: all 0.3s ease 0s;
   list-style: none;
   text-decoration: none;
+  @include dark {
+    color: _palette(text-color-dark);
+  }
 }
 .app__navbar-links li a:hover {
   transition: all 0.3s ease 0s;
@@ -118,7 +122,7 @@ svg.brgr {
     }
     @include dark {
       background-color: _palette(body-dark);
-      color: _palette(secondary-text-color-dark);
+      color: _palette(text-color-dark);
       border: solid 0.1px _palette(btn-border);
     }
   }
