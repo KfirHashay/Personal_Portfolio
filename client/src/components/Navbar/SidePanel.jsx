@@ -53,7 +53,7 @@ function SidePanel({ toggle, check }) {
         </div>
 
         <ul className="sidepanel__links">
-          {["Home", "About", "Skills", "Contact"].map((item) => (
+          {["Services", "Portfolio", "Skills", "Contact"].map((item) => (
             <li key={`link-${item}`}>
               <div />
               <a

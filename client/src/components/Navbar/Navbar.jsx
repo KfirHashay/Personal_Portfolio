@@ -37,7 +37,7 @@ function NavBar() {
         </div>
 
         <ul className="app__navbar-links">
-          {["Home", "About", "Skills", "Contact"].map((item) => (
+          {["Services", "Portfolio", "Skills", "Contact"].map((item) => (
             <li className="p-text" key={`link-${item}`}>
               <div />
               <Link className="p-text" href={`#${item}`}>
