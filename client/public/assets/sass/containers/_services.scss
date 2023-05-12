@@ -1,10 +1,40 @@
 .services {
-  flex: 1;
-  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   flex-direction: column;
-  padding: 2rem 2rem 0rem;
-  //gap: 1.5rem;
-  margin-top: 9rem;
+  flex: 1;
+
+  margin-top: 67px;
+  padding: 1rem 2rem 0rem;
+  width: 100%;
+  border-radius: 8px;
+  padding-bottom: 45px;
+
+  @media (min-width: 980px) and (max-width: 1100px) {
+    min-width: 1050px;
+  }
+
+  @include breakpoint('>=wider') {
+    padding-top: 7rem;
+  }
+
+  @include breakpoint('<=wide') {
+    margin-top: 135px;
+  }
+
+  @include breakpoint('<=narrow') {
+    flex-direction: column;
+    min-width: none;
+  }
+
+  @include breakpoint('<=mobile') {
+    margin: 0;
+    margin-top: 67px;
+    padding: 4rem 1rem 2rem;
+
+    min-width: none;
+  }
 }
 
 .services__cards {
@@ -26,20 +56,20 @@
   margin: 2rem;
   border-radius: 8px;
   @include light {
-    background: _palette(icon-background);
     color: #7e74f1;
   }
   @include dark {
-    background: _palette(primary-color-dark);
     color: _palette(secondary-text-color-dark);
   }
   h2 {
-    font-family: "Plus Jakarta Sans";
+    font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     align-self: center;
+    margin: 1px;
+    position: relative;
     @include light {
       color: _palette(text-color);
     }
@@ -49,23 +79,24 @@
   }
 
   p {
-    font-family: "Inter";
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-
+    margin: 1px;
     padding: 1px;
     text-align: center;
     width: 220px;
     min-height: 72px;
+    position: relative;
   }
 
   .icon {
     position: relative;
     align-self: center;
     font-size: 24px;
-
+    margin: 1px;
     display: flex;
     flex-direction: row;
     justify-content: center;

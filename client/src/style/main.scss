@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-@import url("https://fonts.googleapis.com/css?family=Inter:400,500|Plus+Jakarta+Sans:700,500");
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500|Plus+Jakarta+Sans:700,500');
 
-@import "../../public/assets/sass/libs/_vars.scss";
-@import "../../public/assets/sass/libs/_functions.scss";
-@import "../../public/assets/sass/libs/_mixins.scss";
-@import "../../public/assets/sass/libs/_breakpoints.scss";
+@import '../../public/assets/sass/libs/_vars.scss';
+@import '../../public/assets/sass/libs/_functions.scss';
+@import '../../public/assets/sass/libs/_mixins.scss';
+@import '../../public/assets/sass/libs/_breakpoints.scss';
 
 @include breakpoints(
   (
@@ -31,21 +31,31 @@
     ),
     mobile: (
       null,
-      736px,
+      640px,
     ),
   )
 );
 
-@import "../../public/assets/sass/base/_base.scss";
-@import "../../public/assets/sass/base/_reset.scss";
+@import '../../public/assets/sass/base/_base.scss';
+@import '../../public/assets/sass/base/_reset.scss';
 
-@import "../../public/assets/sass/components/_navbar.scss";
-@import "../../public/assets/sass/components/_sunmoon.scss";
-@import "../../public/assets/sass/components/_title.scss";
-@import "../../public/assets/sass/components/_sidepanel.scss";
-@import "../../public/assets/sass/components/_loader.scss";
+@import '../../public/assets/sass/components/_navbar.scss';
+@import '../../public/assets/sass/components/_sunmoon.scss';
+@import '../../public/assets/sass/components/_title.scss';
+@import '../../public/assets/sass/components/_sidepanel.scss';
+@import '../../public/assets/sass/components/_loader.scss';
+@import '../../public/assets/sass/components/_panel.scss';
+@import '../../public/assets/sass/components/_animationbtn.scss';
+@import '../../public/assets/sass/components/_footer.scss';
 
-@import "../../public/assets/sass/containers/_hero.scss";
-@import "../../public/assets/sass/containers/_services.scss";
-@import "../../public/assets/sass/containers/_work.scss";
-@import "../../public/assets/sass/containers/_404.scss";
+@import '../../public/assets/sass/containers/_hero.scss';
+@import '../../public/assets/sass/containers/_services.scss';
+@import '../../public/assets/sass/containers/_portfolio.scss';
+@import '../../public/assets/sass/containers/_exp.scss';
+@import '../../public/assets/sass/containers/_testimonials.scss';
+@import '../../public/assets/sass/containers/_education.scss';
+@import '../../public/assets/sass/containers/_contact.scss';
+
+@import '../../public/assets/sass/containers/_colors.scss';
+
+@import '../../public/assets/sass/containers/_404.scss';

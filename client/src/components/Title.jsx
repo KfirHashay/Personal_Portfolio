@@ -1,8 +1,8 @@
 import React from "react";
 
-const Title = ({ Title, underTitle }) => {
+const Title = ({ Title, underTitle, align }) => {
   return (
-    <div className="t-container">
+    <div className="t-container" style={{ alignSelf: align }}>
       <div className="title-container">
         <div className="title-line"></div>
         <p>{Title}</p>

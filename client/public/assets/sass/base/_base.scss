@@ -1,7 +1,7 @@
 body {
   transition: all 0.2s ease-in-out;
 
-  font-family: "Inter";
+  font-family: 'Inter';
   @include light {
     background-color: _palette(body);
   }
@@ -46,6 +46,43 @@ body {
   line-height: 1.5;
 
   font-size: 16px;
+}
+
+.social-button {
+  border-radius: 25px;
+  padding: 10px;
+  @include light {
+    color: _palette(secondary-text-color);
+  }
+  @include dark {
+    color: _palette(secondary-text-color-dark);
+  }
+  &.linkedin {
+    :hover {
+      color: _palette(linkdin-color);
+    }
+  }
+  &.github {
+    :hover {
+      @include light {
+        color: _palette(text-color);
+      }
+      @include dark {
+        color: _palette(github-color);
+      }
+    }
+  }
+  &.twitter {
+    :hover {
+      color: _palette(twitter-color);
+    }
+  }
+
+  &.facebook {
+    :hover {
+      color: _palette(facebook-color);
+    }
+  }
 }
 
 /* Scrollbar */

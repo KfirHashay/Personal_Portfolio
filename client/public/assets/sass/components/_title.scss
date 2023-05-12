@@ -1,12 +1,21 @@
 .title-line {
-  background-color: rgb(217, 217, 217);
+  background-color: _palette(secondary-color);
   height: 2px;
   margin-top: 2px;
   width: 16px;
 }
+.second-title-line {
+  background-color: _palette(secondary-color);
+  height: 2px;
+  margin-top: 2px;
+  width: 10px;
+}
 
+.t-container {
+  padding: 0.3rem;
+}
 .title-container {
-  font-family: "Plus Jakarta Sans";
+  font-family: 'Plus Jakarta Sans';
   align-items: center;
   display: flex;
   gap: 16px;
@@ -20,7 +29,7 @@
     min-height: 24px;
     white-space: nowrap;
     margin-right: 12px;
-    // width: 194px;
+
     text-transform: uppercase;
 
     @include light {
@@ -35,7 +44,7 @@ p.under-title {
   padding: 0;
   margin: 0;
 
-  font-family: "Plus Jakarta Sans";
+  font-family: 'Plus Jakarta Sans';
   font-size: 36px;
   font-weight: 700;
   line-height: 45px;
@@ -48,9 +57,4 @@ p.under-title {
   @include dark {
     color: _palette(text-color-dark);
   }
-}
-
-.title-container {
-  align-items: center;
-  display: flex;
 }

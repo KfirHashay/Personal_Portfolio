@@ -7,18 +7,35 @@ $size: (
 
 // Palette.
 $palette: (
-  body: rgb(250 251 251),
-  text-color: rgb(0, 0, 0),
-  secondary-text-color: #3c4348,
+  body: #fbfbfb,
   btn-border: grey,
 
   primary-color: #7e74f1,
   secondary-color: #eae6fe,
   icon-background: #ffffff,
+  primary-color-dark: #242424f0,
+  skill-bar-background: #f5f3fe,
+  //socials
+  linkdin-color: #006192,
+  github-color: #eae6fe,
+  twitter-color: #1d9bf0,
+  facebook-color: #4267b2,
 
-  primary-color-dark: #413f42,
+  //loader
+  loader-1: #9370db,
+  loader-2: #ba55d3,
+  loader-3: #ff00ff,
 
   body-dark: #1e1e1e,
+  //text
+  text-color: rgb(0, 0, 0),
+  p-text-color: #656d72,
+  secondary-text-color: #3c4348,
+  third-text-color: #232e35,
+  light-text-color: #656d72,
+
   text-color-dark: rgba(255, 255, 255, 0.85),
   secondary-text-color-dark: rgba(255, 255, 255, 0.6),
+  //shadow
+  shadow-1: rgb(113 122 131 / 11%),
 );

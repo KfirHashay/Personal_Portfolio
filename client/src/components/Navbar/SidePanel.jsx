@@ -58,7 +58,7 @@ function SidePanel({ toggle, check }) {
               <div />
               <a
                 className="p-text"
-                href={`#${item}`}
+                href={`/${item}`}
                 onClick={() => setActiveMenu(false)}
               >
                 {item}

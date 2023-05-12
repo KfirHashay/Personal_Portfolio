@@ -1,42 +1,32 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-import { Title } from "../../components";
-import { BiCrown, BiGlobe, BiLayer } from "react-icons/bi";
+import { TitleText } from '../../components';
+import { fadeIn, staggerContainer } from '../../utils/motion';
 
-const abouts = [
-  {
-    title: "UI/UX Design",
-    icon: <BiCrown />,
-    description:
-      "Turn what you have in mind of a digital product into reality. For any platform you consider.",
-  },
-  {
-    title: "Application Development",
-    icon: <BiLayer />,
-    description:
-      "Standard designing, building, and implementing your applications with documentation. ",
-  },
-
-  {
-    title: "Web Development",
-    icon: <BiGlobe />,
-    description:
-      "Create and maintain your websites and also take care of its performance and traffic capacity.",
-  },
-];
+import { abouts } from '../../utils/constant';
 
 const Services = () => {
   return (
-    <div className="services app__flex">
-      <Title Title={"Services"} underTitle={"Specialized in"} />
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      id="Services"
+      className="services app__flex"
+    >
+      <TitleText Title={'Services'} underTitle={'Specialized in'} />
 
-      <div className="services__cards">
+      <motion.div
+        variants={fadeIn('up', 'tween', 0.1, 0.85)}
+        className="services__cards"
+      >
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.5, type: "tween" }}
+            whileHover={{ scale: 1.07 }}
+            transition={{ duration: 0.5, type: 'tween' }}
             className="services__card-item"
             key={index}
           >
@@ -48,8 +38,8 @@ const Services = () => {
             </p>
           </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

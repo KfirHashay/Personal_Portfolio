@@ -1,4 +1,5 @@
-import AppWrap from "./AppWrap";
-import MotionWrap from "./MotionWrap";
+import AppWrap from './AppWrap';
 
-export { AppWrap, MotionWrap };
+import DashboardWrap from './DashboardWrap';
+
+export { AppWrap, DashboardWrap };

@@ -5,12 +5,10 @@
   justify-content: space-between;
   padding: 30px 5%;
   margin: auto;
-  // margin-top: 10px;
+
   width: 100%;
   position: fixed;
   height: 80px;
-  //top: 10px;
-  max-width: 90rem;
 
   z-index: 1000;
 
@@ -18,14 +16,14 @@
     background-color: _palette(icon-background);
   }
   @include dark {
-    background-color: _palette(body-dark);
+    background-color: _palette(primary-color-dark);
   }
 }
 
 button.brgr {
   display: none;
   background-color: transparent;
-  @include breakpoint("<=normal") {
+  @include breakpoint('<=normal') {
     justify-content: flex-start;
     display: flex;
   }
@@ -40,7 +38,7 @@ svg.brgr {
   @include dark {
     color: _palette(text-color-dark);
   }
-  @include breakpoint("<=normal") {
+  @include breakpoint('<=normal') {
     justify-content: flex-start;
     display: flex;
   }
@@ -64,7 +62,7 @@ svg.brgr {
       }
     }
   }
-  @include breakpoint("<=mobile") {
+  @include breakpoint('<=mobile') {
     display: none;
   }
 }
@@ -73,7 +71,7 @@ svg.brgr {
   list-style: none;
   text-decoration: none;
 
-  @include breakpoint("<=normal") {
+  @include breakpoint('<=normal') {
     display: none;
   }
 }
@@ -100,7 +98,7 @@ svg.brgr {
 }
 
 .right {
-  @include breakpoint("<=mobile") {
+  @include breakpoint('<=mobile') {
     gap: 15px;
   }
   display: flex;

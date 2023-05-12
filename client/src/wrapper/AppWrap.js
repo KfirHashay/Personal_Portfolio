@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Navbar, Loader } from "../components";
-//import { Footer } from "../components";
-
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import { Navbar, Loader } from '../components';
+import { Footer } from '../components';
+import { AnimatePresence } from 'framer-motion';
 
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
@@ -17,24 +16,24 @@ const AppWrap = (Component, idName, classNames) =>
 
     return (
       <>
-        {loading ? (
-          <Loader />
-        ) : (
-          <div>
-            <motion.div
-              animate={{ opacity: [0, 0, 1] }}
-              transition={{ type: "spring", duration: 1, ease: "easeOut" }}
-            >
-              <Navbar />
-            </motion.div>
-            <div id={idName} className={`app__container ${classNames}`}>
-              <div className="app__wrapper app__flex">
-                <Component />
+        <AnimatePresence initial={false}>
+          {loading ? (
+            <Loader />
+          ) : (
+            <div>
+              <div>
+                <Navbar />
               </div>
+              <div id={idName} className={`app__container ${classNames}`}>
+                <div className="app__wrapper app__flex">
+                  <br /> <br />
+                  <Component />
+                </div>
+              </div>
+              <Footer />
             </div>
-            {/* <Footer /> */}
-          </div>
-        )}
+          )}
+        </AnimatePresence>
       </>
     );
   };

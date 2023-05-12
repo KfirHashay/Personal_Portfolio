@@ -1,6 +1,5 @@
 .sidepanel__container {
-  // background-color: rgba(0, 0, 0, 0.1);
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
   width: 320px;
   position: fixed;
@@ -10,34 +9,34 @@
 }
 
 .sidepanel__panel {
-  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+  box-shadow: _palette(shadow-1) 0px 7px 30px 0px;
+  opacity: 1;
 
-  // display: flex;
   margin-left: auto;
   margin-right: 0;
-  height: 100vh;
+  height: 1000vh;
   width: 320px;
   transform: translateX(0%);
   @include light {
     background-color: rgb(255 255 255);
   }
   @include dark {
-    background-color: rgb(72, 75, 82);
+    background-color: _palette(body-dark);
 
-    color: rgb(229 231 235);
+    color: _palette(text-color-dark);
   }
 
   .closesidepanel_Btn {
-    font-size: 1.5rem /* 24px */;
-    line-height: 2rem /* 32px */;
-    padding: 0.75rem /* 12px */;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 0.75rem;
     border: none;
 
     @include light {
-      background-color: rgb(255 255 255);
+      background-color: _palette(icon-background);
     }
     @include dark {
-      background-color: rgb(72, 75, 82);
+      background-color: _palette(body-dark);
 
       color: _palette(text-color-dark);
     }
@@ -47,13 +46,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem /* 16px */;
-  margin-left: 1rem /* 16px */;
+  padding: 1rem;
+  margin-left: 1rem;
   .hold {
     display: flex;
     justify-content: flex-start;
 
-    @include breakpoint("<=mobile") {
+    @include breakpoint('<=mobile') {
       display: none;
     }
   }
@@ -61,8 +60,8 @@
 
 .set_text {
   font-weight: 500;
-  font-size: 1.125rem /* 18px */;
-  line-height: 1.75rem /* 28px */;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .sidepanel__links {
@@ -74,8 +73,8 @@
 
   p {
     font-weight: 600;
-    font-size: 1.25rem /* 20px */;
-    line-height: 1.75rem /* 28px */;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 .sidepanel__links li {
@@ -90,7 +89,7 @@
 .app__sidepanel-logo {
   display: none;
 
-  @include breakpoint("<=mobile") {
+  @include breakpoint('<=mobile') {
     display: flex;
 
     cursor: pointer;

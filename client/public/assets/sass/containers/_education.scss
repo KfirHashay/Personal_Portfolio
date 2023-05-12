@@ -1,0 +1,261 @@
+#Education {
+  .app__wrapper {
+    padding: 0;
+  }
+  .app__flex {
+    height: 100%;
+  }
+}
+
+.edu {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex: 1;
+  gap: 100px;
+  margin-top: 67px;
+  padding: 1rem 2rem 0rem;
+  width: 100%;
+  border-radius: 8px;
+
+  @media (min-width: 980px) and (max-width: 1100px) {
+    min-width: 1050px;
+  }
+
+  @include breakpoint('>=wider') {
+    padding-top: 7rem;
+  }
+
+  @include breakpoint('<=wide') {
+    margin-top: 135px;
+  }
+
+  @include breakpoint('<=normal') {
+    gap: 0px;
+    min-width: none;
+  }
+
+  @include breakpoint('<=narrow') {
+    flex-direction: column;
+    min-width: none;
+  }
+
+  @include breakpoint('<=mobile') {
+    margin: 0;
+    margin-top: 67px;
+    margin-bottom: 67px;
+    padding: 4rem 1rem 2rem;
+    gap: 5px;
+    min-width: none;
+  }
+}
+
+.edu_left {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 1px;
+  min-height: 289px;
+  gap: 64px;
+  padding: 0px;
+
+  margin-left: 20px;
+  max-width: 538px;
+  @include breakpoint('<=normal') {
+    margin-left: 20px;
+    min-height: 189px;
+  }
+  @include breakpoint('<=mobile') {
+    max-width: 320px;
+  }
+}
+
+.edu_container {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.line {
+  position: relative;
+
+  border: 1px solid _palette(p-text-color);
+  transform: rotate(90deg);
+
+  width: 245px;
+  height: 0px;
+  right: 108.5px;
+  top: 170px;
+}
+
+.edu_obj {
+  /* Education item */
+
+  width: 325px;
+  height: 88px;
+
+  /* Inside auto layout */
+
+  margin-left: 40px;
+
+  .title {
+    margin-bottom: 10px;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    position: relative;
+
+    @include light {
+      color: _palette(third-text-color);
+    }
+    @include dark {
+      color: _palette(secondary-text-color-dark);
+    }
+  }
+
+  .title::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: _palette(p-text-color);
+
+    border-radius: 999px;
+    top: 6px;
+    left: -31px;
+    border: 3px solid _palette(p-text-color);
+  }
+
+  .degree {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    /* Cinder Light */
+
+    color: _palette(p-text-color);
+  }
+
+  .date {
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    /* Cinder */
+    @include light {
+      color: _palette(third-text-color);
+    }
+    @include dark {
+      color: _palette(secondary-text-color-dark);
+    }
+  }
+}
+
+.edu_right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 64px;
+  width: 645px;
+  max-height: 496px;
+  padding: 23.3px 30.8px;
+
+  margin-left: 20px;
+
+  @include breakpoint('<=mobile') {
+    max-width: 320px;
+
+    padding: 0px 27.8px;
+  }
+
+  .description {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    margin-top: 20px;
+
+    color: _palette(p-text-color);
+
+    @include breakpoint('<=mobile') {
+      max-width: 320px;
+      margin-top: 50px;
+      padding: 0px 27.8px;
+    }
+  }
+}
+
+.skill_bars {
+  width: 100%;
+
+  height: 300px;
+  display: flex;
+  gap: 40px;
+
+  flex-flow: column wrap;
+
+  @include breakpoint('<=mobile') {
+    max-width: 320px;
+
+    padding: 0px 27.8px;
+  }
+  .bar_item {
+    height: 41px;
+    width: 50%;
+
+    .label {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+
+      @include light {
+        color: _palette(third-text-color);
+      }
+      @include dark {
+        color: _palette(secondary-text-color-dark);
+      }
+    }
+
+    .bar {
+      width: 100%;
+      height: 8px;
+      margin-top: 16px;
+      /* Purple  Light */
+
+      @include light {
+        background: _palette(skill-bar-background);
+      }
+      @include dark {
+        background: _palette(secondary-text-color-dark);
+      }
+
+      border-radius: 2px;
+
+      .fill {
+        height: 8px;
+
+        @include light {
+          background: _palette(primary-color);
+        }
+        @include dark {
+          background: _palette(primary-color-dark);
+        }
+
+        border-radius: 2px;
+      }
+    }
+  }
+}
