@@ -28,16 +28,38 @@
 .primary.upload-button {
   border: 1px solid transparent;
 
-  background: #7e74f1;
-  color: #ffffff;
+  @include light {
+    background: _palette(primary-color);
+    color: _palette(text-color-dark);
+  }
+  @include dark {
+    background: _palette(primary-color-dark);
+    color: _palette(text-color-dark);
+
+    border: solid 0.1px _palette(btn-border);
+  }
 }
 
 .primary .wrapper {
-  background-color: #7e74f1;
+  @include light {
+    background-color: _palette(primary-color);
+    color: _palette(text-color-dark);
+  }
+  @include dark {
+    background-color: _palette(primary-color-dark);
+    color: _palette(text-color-dark);
+  }
 }
 
 .primary .wrapper:hover {
-  background-color: #7e74f1;
+  @include light {
+    background-color: _palette(primary-color);
+    color: _palette(text-color-dark);
+  }
+  @include dark {
+    background-color: _palette(primary-color-dark);
+    color: _palette(text-color-dark);
+  }
 }
 
 .primary .checkmark-wrapper svg path {

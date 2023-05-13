@@ -77,7 +77,7 @@ const Portfolio = () => {
         />
 
         <div className="app__portfolio-filter">
-          {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map(
+          {['UI/UX', 'Web App', 'FireBase', 'React JS', 'All'].map(
             (item, index) => (
               <div
                 key={index}
@@ -121,10 +121,6 @@ const Portfolio = () => {
                 >
                   {CardData.description}
                 </p>
-
-                {/* <div className="app__portfolio-tag app__flex">
-                  <p className="p-text">{portfolio.tags[0]}</p>
-                </div> */}
               </div>
               <div className="app__portfolio-bottom">
                 <div className="app__portfolio-tag">
@@ -143,13 +139,16 @@ const Portfolio = () => {
                     {CardData.tags[1]}
                   </motion.p>
                 </div>
-                <motion.div
+                <motion.a
                   whileHover={{ scale: [1, 0.88] }}
                   transition={{ duration: 0.25 }}
                   className="svgCon"
+                  href={CardData.projectURL}
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <FiLink2 />
-                </motion.div>
+                </motion.a>
               </div>
             </div>
           ))}
@@ -160,38 +159,3 @@ const Portfolio = () => {
 };
 
 export default AppWrap(Portfolio, 'portfolio');
-
-// const portfolio = [
-//   {
-//     title: "title1",
-//     description: "description1",
-//     projectLink: "projectLink1",
-//     codeLink: "codeLink1",
-//     imgUrl: "assets/images/demoImage.png",
-//     tags: ["UI/UX", "React JS"],
-//   },
-//   {
-//     title: "title2",
-//     description: "description2",
-//     projectLink: "string",
-//     codeLink: "title",
-//     imgUrl: "assets/images/demoImage.png",
-//     tags: ["Web App", "Mobile App"],
-//   },
-//   {
-//     title: "title3",
-//     description: "description3",
-//     projectLink: "string",
-//     codeLink: "title",
-//     imgUrl: "assets/images/demoImage.png",
-//     tags: ["Web App", "React JS"],
-//   },
-//   {
-//     title: "title4",
-//     description: "description",
-//     projectLink: "string",
-//     codeLink: "title",
-//     imgUrl: "assets/images/demoImage.png",
-//     tags: ["UI/UX", "React JS"],
-//   },
-// ];

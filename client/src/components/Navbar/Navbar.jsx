@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import ResumePdf from '../../utils/files/KfirHashay_Resume.pdf';
+
 import { Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
@@ -59,12 +61,21 @@ function NavBar() {
         </div>
 
         <ul className="app__navbar-links">
-          {['Services', 'Portfolio', 'Skills', 'Contact'].map((item) => (
+          {['Home', 'Portfolio', 'Skills', 'Contact'].map((item) => (
             <li className="p-text" key={`link-${item}`}>
-              <div />
-              <Link className="p-text" to={`/${item}`}>
-                {item}
-              </Link>
+              {item === 'Home' || item === 'Portfolio' ? (
+                <Link className="p-text" to={`/${item}`}>
+                  {item}
+                </Link>
+              ) : (
+                <Link
+                  className="p-text"
+                  to={`#${item}`}
+                  onClick={() => window.location.replace(`/#${item}`)}
+                >
+                  {item}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -73,13 +84,15 @@ function NavBar() {
           <div className="sunmoon">
             <SunMoon />
           </div>
-          <Button
-            customClass={'Resume__btn'}
-            text={'Resume'}
-            borderRadius={'4px'}
-            width={'85px'}
-            height={'45px'}
-          />
+          <Link to={ResumePdf} target="_blank" download>
+            <Button
+              customClass={'Resume__btn'}
+              text={'Resume'}
+              borderRadius={'4px'}
+              width={'85px'}
+              height={'45px'}
+            />
+          </Link>
         </div>
       </motion.nav>
 

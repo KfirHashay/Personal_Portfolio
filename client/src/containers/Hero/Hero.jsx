@@ -92,7 +92,13 @@ const Hero = () => {
           <motion.div className="front">
             <div className="overlap-1">
               <div className="person">
-                <img className="img" src="assets/images/demoImage.png" alt="" />
+                <img
+                  className="img"
+                  src="assets/images/profile-removebg-preview.png"
+                  alt="profile"
+                />
+
+                {/* src="assets/images/profile-removebg-preview.png" */}
               </div>
               <div className="lines">
                 <ReactSVG src="assets/images/lines.svg" />

@@ -43,10 +43,11 @@
 
   @include breakpoint('<=mobile') {
     margin: 0;
-    margin-top: 67px;
+    margin-top: 100px;
     margin-bottom: 67px;
     padding: 4rem 1rem 2rem;
     gap: 5px;
+    justify-content: center;
     min-width: none;
   }
 }
@@ -96,31 +97,30 @@
     margin-left: 0;
     margin-bottom: 20px;
   }
-  .name {
+
+  .input {
     width: 100%;
     height: 48px;
-    left: 0px;
-    top: 0px;
-    margin-bottom: 16px;
     border: none;
-
-    background: #ffffff;
     border-radius: 8px;
-    border: 1px solid #ccc;
-    //outline: none;
+
+    @include light {
+      background: _palette(icon-background);
+      border: 1px solid #ccc;
+      color: _palette(text-color);
+    }
+    @include dark {
+      background: _palette(primary-color-dark);
+      color: _palette(text-color-dark);
+    }
+  }
+
+  .name {
+    margin-bottom: 16px;
   }
 
   .email {
-    width: 100%;
-    height: 48px;
-    left: 0px;
-    top: 0px;
     margin-bottom: 24px;
-    border: none;
-    background: #ffffff;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    //outline: none;
   }
 
   .message {
@@ -129,12 +129,20 @@
     left: 0px;
     top: 136px;
     border: none;
-    background: #ffffff;
     border-radius: 8px;
     margin-bottom: 48px;
-    border: 1px solid #ccc;
-    //outline: none;
+
     resize: none;
+
+    @include light {
+      background: _palette(icon-background);
+      border: 1px solid #ccc;
+      color: _palette(text-color);
+    }
+    @include dark {
+      background: _palette(primary-color-dark);
+      color: _palette(text-color-dark);
+    }
   }
 }
 
@@ -144,23 +152,25 @@
   flex-direction: column;
   gap: 64px;
   width: 100%;
+
   // max-height: 496px;
   padding: 23.3px 30.8px;
   height: 100%;
   margin-left: 20px;
 
+  @include breakpoint('<=normal') {
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+
   @include breakpoint('<=mobile') {
     max-width: 320px;
-
+    margin-left: 125px;
     padding: 0px 27.8px;
   }
 
-  @include breakpoint('<=normal') {
-    margin-left: 100px;
-  }
-
   @media screen and (max-width: 980px) {
-    margin: 100px 0px 0px 0px;
+    // margin: 100px 0px 0px 0px;
     height: 50%;
   }
 
@@ -170,6 +180,7 @@
     margin-left: 100px;
 
     justify-content: space-between;
+
     @include breakpoint('<=normal') {
       margin-left: 0;
       margin-bottom: 20px;
@@ -178,11 +189,10 @@
   }
 
   .info_box {
-    width: 100%;
     height: 56px;
     margin: auto;
     margin-bottom: 46px;
-
+    width: 100%;
     flex-direction: row;
     display: flex;
     justify-content: center;
@@ -200,10 +210,25 @@
       width: 56px;
       height: 56px;
 
-      /* Purple  Light */
-
-      background: #f5f3fe;
+      // background:
       border-radius: 16px;
+
+      @include light {
+        background: _palette(icon-background);
+        color: #7e74f1;
+        border: rgb(237, 237, 237) solid 0.1px;
+        border: dotted 0.01px _palette(primary-color);
+      }
+      @include dark {
+        background: _palette(primary-color-dark);
+        color: _palette(secondary-text-color-dark);
+        border: dotted 0.01px _palette(primary-color);
+      }
+
+      @include breakpoint('<=mobile') {
+        min-width: 66px;
+        height: 66px;
+      }
     }
 
     .info_conetnt {
@@ -212,7 +237,7 @@
     }
 
     .title {
-      width: 64px;
+      width: 100%;
       height: 19px;
       left: 80px;
       top: 4px;
@@ -222,10 +247,12 @@
       font-weight: 500;
       font-size: 16px;
       line-height: 19px;
-
-      /* Cinder */
-
-      color: #232e35;
+      @include light {
+        color: _palette(text-color);
+      }
+      @include dark {
+        color: _palette(text-color-dark);
+      }
     }
 
     .body {
@@ -239,11 +266,7 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 24px;
-      /* identical to box height, or 171% */
-
-      /* Cinder Light */
-
-      color: #656d72;
+      color: _palette(p-text-color);
     }
   }
 }

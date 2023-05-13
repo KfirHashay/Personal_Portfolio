@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-import { useStateContext } from "../../state/context/ContextProvider";
-import { MdOutlineCancel } from "react-icons/md";
-import { ReactSVG } from "react-svg";
+import { useStateContext } from '../../state/context/ContextProvider';
+import { MdOutlineCancel } from 'react-icons/md';
+import { ReactSVG } from 'react-svg';
 
 const variants = {
-  open: { x: "100%", opactity: 0 },
+  open: { x: '100%', opactity: 0 },
   closed: { x: 0, opactity: 1 },
 };
 
@@ -17,10 +18,10 @@ function SidePanel({ toggle, check }) {
   return (
     <motion.div
       initial="open"
-      animate={activeMenu ? "closed" : "open"}
-      transition={{ duration: 0.7, ease: "easeOut", type: "spring" }}
+      animate={activeMenu ? 'closed' : 'open'}
+      transition={{ duration: 0.7, ease: 'easeOut', type: 'spring' }}
       exit={{
-        x: "100%",
+        x: '100%',
         opactity: 0,
         transition: { duration: 0.5 },
       }}
@@ -45,7 +46,7 @@ function SidePanel({ toggle, check }) {
           <button
             type="button"
             onClick={() => setActiveMenu(false)}
-            style={{ color: "rgb(153, 171, 180)", borderRadius: "50%" }}
+            style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%' }}
             className="closesidepanel_Btn"
           >
             <MdOutlineCancel />
@@ -53,16 +54,37 @@ function SidePanel({ toggle, check }) {
         </div>
 
         <ul className="sidepanel__links">
-          {["Services", "Portfolio", "Skills", "Contact"].map((item) => (
+          {['Home', 'Portfolio', 'Skills', 'Contact'].map((item) => (
             <li key={`link-${item}`}>
               <div />
-              <a
+              {/* <a
                 className="p-text"
                 href={`/${item}`}
                 onClick={() => setActiveMenu(false)}
               >
                 {item}
-              </a>
+              </a> */}
+
+              {item === 'Home' || item === 'Portfolio' ? (
+                <Link
+                  className="p-text"
+                  to={`/${item}`}
+                  onClick={() => setActiveMenu(false)}
+                >
+                  {item}
+                </Link>
+              ) : (
+                <Link
+                  className="p-text"
+                  to={`#${item}`}
+                  onClick={() => {
+                    window.location.replace(`/#${item}`);
+                    setActiveMenu(false);
+                  }}
+                >
+                  {item}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

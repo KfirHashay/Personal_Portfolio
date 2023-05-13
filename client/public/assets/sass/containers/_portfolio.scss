@@ -234,7 +234,11 @@
       color: _pallete(text-color-dark);
     }
   }
-  .svgCon {
+
+  a {
+    color: inherit;
+  }
+  a.svgCon {
     border: 1px solid #f1f1f1;
     display: flex;
     padding: 5px;
@@ -244,6 +248,14 @@
     border-radius: 4px;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    text-decoration: none !important;
+
+    @include light {
+      color: _pallete(text-color);
+    }
+    @include dark {
+      color: _pallete(text-color-dark);
+    }
   }
   p {
     margin: 1px auto;
@@ -256,7 +268,7 @@
     flex-direction: row;
     align-items: center;
     padding: 4px 8px;
-    // margin: 2px;
+
     @include light {
       color: _pallete(text-color);
     }

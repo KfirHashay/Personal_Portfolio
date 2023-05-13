@@ -5,7 +5,7 @@ import { staggerContainer } from '../../utils/motion';
 import { motion } from 'framer-motion';
 import { Uploadbtn } from '../../components';
 
-import { GrLocationPin } from 'react-icons/gr';
+import { MdOutlineLocationOn } from 'react-icons/md';
 import { FiPhoneCall } from 'react-icons/fi';
 import { AiOutlineMail } from 'react-icons/ai';
 
@@ -35,12 +35,11 @@ const Contact = () => {
         <div className="form">
           <input
             type="text"
-            className="name"
+            className="input name"
             placeholder="Name"
             required
-            autofocus
           />
-          <input className="email" type="email" placeholder="Email" />
+          <input className="input email" type="email" placeholder="Email" />
           <textarea type="text" className="message" placeholder="Message" />
 
           <div className="button-wrapper">
@@ -55,7 +54,7 @@ const Contact = () => {
         <div className="info">
           <div className="info_box">
             <div className="icon">
-              <GrLocationPin />
+              <MdOutlineLocationOn />
             </div>
             <div className="info_content">
               <div className="title">Address</div>

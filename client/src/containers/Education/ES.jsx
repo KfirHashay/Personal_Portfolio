@@ -16,7 +16,7 @@ const Education = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      id="Education"
+      id="Skills"
       className="edu app__flex"
     >
       <div className="edu_left">
