@@ -75,6 +75,10 @@
   display: flex;
   flex-direction: column;
   gap: 34px;
+
+  @include breakpoint('<=mobile') {
+    max-width: 320px;
+  }
 }
 
 .line {
@@ -83,7 +87,7 @@
   border: 1px solid _palette(p-text-color);
   transform: rotate(90deg);
 
-  width: 245px;
+  max-width: 245px;
   height: 0px;
   right: 108.5px;
   top: 170px;
@@ -92,7 +96,7 @@
 .edu_obj {
   /* Education item */
 
-  width: 325px;
+  max-width: 325px;
   height: 88px;
 
   /* Inside auto layout */
