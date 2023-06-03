@@ -1,26 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { staggerContainer } from '../../utils/motion';
 
-import { motion } from 'framer-motion';
-import { Uploadbtn } from '../../components';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../firebase';
 
-import { MdOutlineLocationOn } from 'react-icons/md';
-import { FiPhoneCall } from 'react-icons/fi';
-import { AiOutlineMail } from 'react-icons/ai';
+import { motion } from 'framer-motion';
+
+import {
+  MdOutlineLocationOn,
+  FiPhoneCall,
+  AiOutlineMail,
+} from '../../components';
+
+import ContactPanel from '../../components/ContactPanel.jsx';
 
 const Contact = () => {
+  const [NewName, setName] = useState('');
+  const [NewEmail, setEmail] = useState('');
+  const [NewMessage, setMessage] = useState('');
+
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    async function setLoadingState() {
-      await new Promise((resolve) =>
-        setTimeout(() => resolve(setIsLoading(false)), 4000)
-      );
-    }
+  const MessagesRef = collection(db, 'messages');
 
-    setLoadingState();
-  }, []);
+  const SendMessage = async () => {
+    await addDoc(
+      MessagesRef,
+      {
+        name: NewName,
+        email: NewEmail,
+        message: NewMessage,
+      },
+
+      setTimeout(() => setIsLoading(false), 3500)
+    )
+      .then(
+        setName(''),
+        setEmail(''),
+        setMessage(''),
+
+        console.log('Sent Successfully')
+      )
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const ResetForm = () => {
+    setIsLoading(!isLoading);
+  };
 
   return (
     <motion.div
@@ -32,22 +61,14 @@ const Contact = () => {
       className="contact app__flex"
     >
       <div className="contact_left">
-        <div className="form">
-          <input
-            type="text"
-            className="input name"
-            placeholder="Name"
-            required
-          />
-          <input className="input email" type="email" placeholder="Email" />
-          <textarea type="text" className="message" placeholder="Message" />
-
-          <div className="button-wrapper">
-            <Uploadbtn isLoading={isLoading} variant="primary">
-              Send Message
-            </Uploadbtn>
-          </div>
-        </div>
+        <ContactPanel
+          isLoading={isLoading}
+          setName={setName}
+          setEmail={setEmail}
+          setMessage={setMessage}
+          func={SendMessage}
+          func2={ResetForm}
+        />
       </div>
 
       <div className="contact_right">

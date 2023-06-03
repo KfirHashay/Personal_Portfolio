@@ -2,7 +2,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { BeatLoader } from 'react-spinners';
 import { useState } from 'react';
 
-function Uploadbtn({ children, variant }) {
+function Uploadbtn({ children, variant, func }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const textControls = useAnimation();
   const loadingControls = useAnimation();
@@ -15,48 +15,47 @@ function Uploadbtn({ children, variant }) {
     textControls.start({
       opacity: 0,
       y: -2,
-      transition: { duration: 0.4 },
+      transition: { duration: 0.45 },
     });
 
     await loadingControls.start({
       zIndex: 1,
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5, delay: 0.2 },
+      transition: { duration: 0.55, delay: 0.25 },
     });
     textControls.start({
       x: 9,
     });
-
     await loadingControls.start({
       zIndex: 1,
       y: 4,
       opacity: 0,
-      transition: { duration: 0.6, delay: 0.4 },
+      transition: { duration: 0.65, delay: 0.45 },
     });
     await Promise.all([
       doneControls.start({
         zIndex: 1,
         y: 0,
         opacity: 1,
-        transition: { duration: 0.44 },
+        transition: { duration: 0.49 },
       }),
       textControls.start({
         zIndex: 1,
         y: 0,
         opacity: 1,
-        transition: { duration: 0.5 },
+        transition: { duration: 0.55 },
       }),
     ]);
     doneControls.start({
       x: -9,
       opacity: 0,
-      transition: { duration: 0.4, delay: 0.15 },
+      transition: { duration: 0.45, delay: 0.2 },
     });
     await textControls.start({
       y: 0,
       x: 0,
-      transition: { duration: 0.45, delay: 0.15 },
+      transition: { duration: 0.5, delay: 0.2 },
     });
     doneControls.start({
       y: -4,
@@ -69,7 +68,10 @@ function Uploadbtn({ children, variant }) {
   return (
     <button
       className={`${variant} upload-button`}
-      onClick={() => !isAnimating && animate()}
+      onClick={() => {
+        !isAnimating && animate();
+        func();
+      }}
     >
       <motion.div className="wrapper">
         <motion.div
@@ -91,7 +93,11 @@ function Uploadbtn({ children, variant }) {
             />
           </svg>
         </motion.div>
-        <motion.span initial={{ opacity: 1 }} animate={textControls}>
+        <motion.span
+          className="uploadBtnText"
+          initial={{ opacity: 1 }}
+          animate={textControls}
+        >
           {children}
         </motion.span>
         <motion.div

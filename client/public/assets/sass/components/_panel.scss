@@ -9,6 +9,7 @@
 
   height: 100%;
   width: 100%;
+  max-width: 643px;
 
   h1 {
     margin-bottom: 2rem;
@@ -22,10 +23,11 @@
 .ResizablePanel {
   position: relative;
   overflow: hidden;
+  max-width: 643px;
   .child {
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 
     @include breakpoint('<=mobile') {
       padding-left: 1rem;
