@@ -61,6 +61,7 @@ ul.company-list {
   flex-wrap: wrap;
   margin-top: 5rem;
   margin-right: 9rem;
+
   li {
     display: flex;
     flex-direction: row;
@@ -146,6 +147,15 @@ ul.company-list-mobile {
   }
 }
 
+.ChevRight {
+  @include light {
+    color: _palette(body);
+  }
+  @include dark {
+    color: _palette(body);
+  }
+}
+
 .exp-right {
   display: flex;
   align-items: flex-end;
@@ -164,50 +174,6 @@ ul.company-list-mobile {
   }
 }
 
-.selected {
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 0.3rem;
-  @include light {
-    color: _palette(text-color-dark);
-    background: _palette(primary-color-dark);
-  }
-  @include dark {
-    color: _palette(primary-color);
-    background: _palette(icon-background);
-  }
-  font-size: 16px;
-  transition: all ease-in-out 0.4s;
-}
-
-.selection {
-  border-radius: 0.3rem;
-
-  text-decoration: none;
-  text-align: left;
-
-  line-height: 1.5;
-
-  @include light {
-    color: _palette(secondary-text-color);
-  }
-  @include dark {
-    color: _palette(secondary-text-color-dark);
-  }
-  font-size: 16px;
-
-  transition: all ease-in-out 0.3s;
-
-  &:hover {
-    @include light {
-      color: _palette(text-color-dark);
-      background: _palette(primary-color-dark);
-    }
-    @include dark {
-      color: _palette(secondary-text-color);
-      background: _palette(icon-background);
-    }
-  }
-}
 .job-title {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;

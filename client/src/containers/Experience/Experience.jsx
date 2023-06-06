@@ -7,7 +7,12 @@ import { staggerContainer } from '../../utils/motion';
 
 import { companies } from '../../utils/constant';
 
-import { CompSelection, ResizablePanel, CompanyText } from '../../components';
+import {
+  CompSelection,
+  ResizablePanel,
+  CompanyText,
+  AnimatedTabs,
+} from '../../components';
 
 const Experience = () => {
   let duration = 0.75;
@@ -32,17 +37,18 @@ const Experience = () => {
         />
 
         {screenSize < 981 ? (
-          <ul className="company-list-mobile">
+          <div className="Tabs_Container">
             {companies.map((company, index) => (
-              <CompSelection
+              <AnimatedTabs
                 key={company.id}
                 {...company}
                 index={index}
                 active={active}
+                id={company.id}
                 handleClick={setActive}
               />
             ))}
-          </ul>
+          </div>
         ) : (
           <ul className="company-list">
             {companies.map((company, index) => (
@@ -51,6 +57,7 @@ const Experience = () => {
                 {...company}
                 index={index}
                 active={active}
+                id={company.id}
                 handleClick={setActive}
               />
             ))}

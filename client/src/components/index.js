@@ -36,6 +36,7 @@ export { default as Colorcard } from './Colorcard';
 export { default as ResizablePanel } from './ResizablePanel';
 export { default as CompanyText } from './CompanyText';
 export { default as ContactPanel } from './ContactPanel';
+export { default as AnimatedTabs } from './AnimatedTabs';
 export { default as Footer } from './Footer';
 
 //icons

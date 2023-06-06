@@ -35,10 +35,11 @@
     ),
   )
 );
-
+//basic
 @import '../../public/assets/sass/base/_base.scss';
 @import '../../public/assets/sass/base/_reset.scss';
 
+//components
 @import '../../public/assets/sass/components/_navbar.scss';
 @import '../../public/assets/sass/components/_sunmoon.scss';
 @import '../../public/assets/sass/components/_title.scss';
@@ -46,8 +47,10 @@
 @import '../../public/assets/sass/components/_loader.scss';
 @import '../../public/assets/sass/components/_panel.scss';
 @import '../../public/assets/sass/components/_animationbtn.scss';
+@import '../../public/assets/sass/components/_animatedTabs.scss';
 @import '../../public/assets/sass/components/_footer.scss';
 
+//containers
 @import '../../public/assets/sass/containers/_hero.scss';
 @import '../../public/assets/sass/containers/_services.scss';
 @import '../../public/assets/sass/containers/_portfolio.scss';
@@ -55,7 +58,5 @@
 @import '../../public/assets/sass/containers/_testimonials.scss';
 @import '../../public/assets/sass/containers/_education.scss';
 @import '../../public/assets/sass/containers/_contact.scss';
-
 @import '../../public/assets/sass/containers/_colors.scss';
-
 @import '../../public/assets/sass/containers/_404.scss';
