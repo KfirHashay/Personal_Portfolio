@@ -1,0 +1,10 @@
+.DashboardHome {
+  p {
+    @include light {
+      color: _palette(text-color);
+    }
+    @include dark {
+      color: _palette(text-color-dark);
+    }
+  }
+}

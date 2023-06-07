@@ -60,7 +60,7 @@ function ContactPanel({
               </div>
             ) : (
               <div className="formAfter">
-                <p>
+                <p className="p-text">
                   Thank you for your Message! <br /> I Will get back to you as
                   soon as possible, in the meantime, look around!.
                 </p>

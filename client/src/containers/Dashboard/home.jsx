@@ -1,12 +1,25 @@
-// import React, { useState } from "react";
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import instance from '../../http-common';
 
-const Home = () => {
+//const http = 'http://localhost:8080/api';
+
+function Home() {
+  const [backendData, setBackendData] = useState(null);
+
+  useEffect(() => {
+    instance.get('/').then((response) => {
+      setBackendData(response.data);
+    });
+  }, []);
+
   return (
-    <div>
-      <div>home</div>
+    <div className="DashboardHome">
+      <p>This is A Dashboard</p>
+
+      <div className="data">Test</div>
     </div>
   );
-};
+}
 
 export default Home;
