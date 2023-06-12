@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Navbar, Loader } from "../components";
+import React, {useState, useEffect} from 'react';
+import {Navbar, Loader} from '../components';
 //import { Footer } from "../components";
 
-import { motion } from "framer-motion";
+import {motion} from 'framer-motion';
 
 const DashboardWrap = (Component, idName, classNames) =>
   function HOC() {
@@ -17,24 +17,24 @@ const DashboardWrap = (Component, idName, classNames) =>
 
     return (
       <>
-        {loading ? (
+        {/* {loading ? (
           <Loader />
-        ) : (
-          <div>
-            <motion.div
-              animate={{ opacity: [0, 0, 1] }}
-              transition={{ type: "spring", duration: 1, ease: "easeOut" }}
-            >
-              <Navbar />
-            </motion.div>
-            <div id={idName} className={`app__container ${classNames}`}>
-              <div className="app__wrapper app__flex">
-                <Component />
-              </div>
+        ) : ( */}
+        <div>
+          <motion.div
+            animate={{opacity: [0, 0, 1]}}
+            transition={{type: 'spring', duration: 1, ease: 'easeOut'}}
+          >
+            <Navbar />
+          </motion.div>
+          <div id={idName} className={`app__container ${classNames}`}>
+            <div className="app__wrapper app__flex">
+              <Component />
             </div>
-            {/* <Footer /> */}
           </div>
-        )}
+          {/* <Footer /> */}
+        </div>
+        {/* )} */}
       </>
     );
   };
