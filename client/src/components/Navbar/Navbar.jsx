@@ -1,21 +1,20 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 
 import ResumePdf from '../../utils/files/KfirHashay_Resume.pdf';
 
-import { Link } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import { motion } from 'framer-motion';
-import { navVariants } from '../../utils/motion';
+import {Link} from 'react-router-dom';
+import {AnimatePresence} from 'framer-motion';
+import {motion} from 'framer-motion';
+import {navVariants} from '../../utils/motion';
 
 import SidePanel from './SidePanel';
-import { OutsideAlerter, HiMenuAlt1, SunMoon, Button } from '../index';
+import {OutsideAlerter, HiMenuAlt1, SunMoon, Button} from '../index';
 
-import { useStateContext } from '../../state/context/ContextProvider';
-import { ReactSVG } from 'react-svg';
+import {useStateContext} from '../../state/context/ContextProvider';
+import {ReactSVG} from 'react-svg';
 
 function NavBar() {
-  const { activeMenu, setActiveMenu, setScreenSize, screenSize } =
-    useStateContext();
+  const {activeMenu, setActiveMenu, setScreenSize, screenSize} = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -37,11 +36,7 @@ function NavBar() {
         whileInView="show"
         className="app__navbar"
       >
-        <button
-          type="button"
-          onClick={() => setActiveMenu(true)}
-          className="brgr"
-        >
+        <button type="button" onClick={() => setActiveMenu(true)} className="brgr">
           <HiMenuAlt1 className="brgr" />
         </button>
 
@@ -91,15 +86,14 @@ function NavBar() {
               borderRadius={'4px'}
               width={'85px'}
               height={'45px'}
+              onClick={() => console.log('Resume Clicked')}
             />
           </Link>
         </div>
       </motion.nav>
 
       <OutsideAlerter>
-        <AnimatePresence initial={false}>
-          {activeMenu && <SidePanel />}
-        </AnimatePresence>
+        <AnimatePresence initial={false}>{activeMenu && <SidePanel />}</AnimatePresence>
       </OutsideAlerter>
     </>
   );

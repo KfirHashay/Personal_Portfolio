@@ -1,19 +1,19 @@
-import React, {useState, useEffect} from 'react';
-import {Navbar, Loader} from '../components';
+import React from 'react';
+import {Navbar} from '../components';
 //import { Footer } from "../components";
 
 import {motion} from 'framer-motion';
 
 const DashboardWrap = (Component, idName, classNames) =>
   function HOC() {
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-      }, 1500);
-    }, []);
+    // useEffect(() => {
+    //   setLoading(true);
+    //   setTimeout(() => {
+    //     setLoading(false);
+    //   }, 1500);
+    // }, []);
 
     return (
       <>

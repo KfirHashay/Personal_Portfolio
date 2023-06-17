@@ -9,7 +9,10 @@ body {
     background-color: _palette(body-dark);
   }
 }
-
+.home_container {
+  margin: 0px;
+  padding: 0px;
+}
 .app__container {
   width: 100%;
   min-height: 100vh;

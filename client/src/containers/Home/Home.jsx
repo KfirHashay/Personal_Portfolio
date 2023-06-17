@@ -24,14 +24,14 @@ const Home = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div>
+        <>
           <Hero />
           <Services />
           <Experience />
           <Education />
           <Contact />
           {/* <Testimonials /> */}
-        </div>
+        </>
       )}
     </>
   );

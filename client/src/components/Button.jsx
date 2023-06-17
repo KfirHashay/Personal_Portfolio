@@ -1,18 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const Button = ({
-  bgColor,
-  color,
-  text,
-  borderRadius,
-  width,
-  height,
-  customClass,
-}) => {
+const Button = ({bgColor, color, text, borderRadius, width, height, customClass}) => {
   return (
     <button
       type="button"
-      style={{ background: bgColor, color, borderRadius, width, height }}
+      style={{background: bgColor, color, borderRadius, width, height}}
       className={`button ${customClass}`}
     >
       {text}

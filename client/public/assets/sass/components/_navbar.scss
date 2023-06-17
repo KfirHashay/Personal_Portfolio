@@ -113,14 +113,19 @@ svg.brgr {
   .Resume__btn {
     position: relative;
     //  top: -1px;
+    touch-action: none;
+    user-select: none;
 
+    :focus {
+      outline: none;
+    }
     @include light {
       background-color: _palette(body);
       color: _palette(secondary-text-color);
       border: solid 0.1px _palette(btn-border);
     }
     @include dark {
-      background-color: _palette(body-dark);
+      background-color: #353336;
       color: _palette(text-color-dark);
       border: solid 0.1px _palette(btn-border);
     }
